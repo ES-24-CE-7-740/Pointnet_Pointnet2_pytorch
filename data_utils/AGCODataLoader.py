@@ -42,7 +42,6 @@ class TractorsAndCombines(Dataset):
                 label = np.load(label_file)
                 for class_id in range(3):
                     class_counts[class_id] += np.sum(label == class_id)
-                print(class_counts)
 
             total_points = np.sum(class_counts)
             class_frequencies = class_counts / total_points
@@ -51,7 +50,6 @@ class TractorsAndCombines(Dataset):
 
             # Normalize weights
             self.labelweights /= np.sum(self.labelweights)
-            print(self.labelweights)
         
     # Set some class properties
     @property

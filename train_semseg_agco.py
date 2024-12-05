@@ -113,7 +113,7 @@ def main(args):
     shutil.copy('models/pointnet2_utils.py', str(experiment_dir))
 
     classifier = MODEL.get_model(NUM_CLASSES).cuda()
-    print(classifier)
+    #print(classifier)
     if torch.cuda.device_count() > 1:
         print(f'Using {torch.cuda.device_count()} gpus.')
         classifier = torch.nn.DataParallel(classifier)
