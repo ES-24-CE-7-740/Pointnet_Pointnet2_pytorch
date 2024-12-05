@@ -4,7 +4,7 @@ Date: Nov 2019
 """
 import argparse
 import os
-from data_utils.S3DISDataLoader import S3DISDataset
+from data_utils.AGCODataLoader import TractorsAndCombines
 import torch
 import datetime
 import logging
@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = BASE_DIR
 sys.path.append(os.path.join(ROOT_DIR, 'models'))
 
-classes = ['Ground', 'Tractor', 'Combine Harvester']
+classes = ['other', 'tractor', 'combine']
 class2label = {cls: i for i, cls in enumerate(classes)}
 seg_classes = class2label
 seg_label_to_cat = {}
@@ -39,15 +39,13 @@ def parse_args():
     parser.add_argument('--batch_size', type=int, default=16, help='Batch Size during training [default: 16]')
     parser.add_argument('--epoch', default=32, type=int, help='Epoch to run [default: 32]')
     parser.add_argument('--learning_rate', default=0.001, type=float, help='Initial learning rate [default: 0.001]')
-    parser.add_argument('--gpu', type=str, default='1', help='GPU to use [default: GPU 0]')
+    parser.add_argument('--gpu', type=str, default='0,1', help='GPU to use [default: GPU 0]')
     parser.add_argument('--optimizer', type=str, default='Adam', help='Adam or SGD [default: Adam]')
-    parser.add_argument('--log_dir', type=str, default=None, help='Log path [default: None]')
+    parser.add_argument('--log_dir', type=str, default="pointnet2_agco", help='Log path [default: None]')
     parser.add_argument('--decay_rate', type=float, default=1e-4, help='weight decay [default: 1e-4]')
     parser.add_argument('--npoint', type=int, default=4096, help='Point Number [default: 4096]')
     parser.add_argument('--step_size', type=int, default=10, help='Decay step for lr decay [default: every 10 epochs]')
     parser.add_argument('--lr_decay', type=float, default=0.7, help='Decay rate for lr decay [default: 0.7]')
-    parser.add_argument('--test_area', type=int, default=5, help='Which area to use for test, option: 1-6 [default: 5]')
-
     return parser.parse_args()
 
 
@@ -63,7 +61,7 @@ def main(args):
     timestr = str(datetime.datetime.now().strftime('%Y-%m-%d_%H-%M'))
     experiment_dir = Path('./log/')
     experiment_dir.mkdir(exist_ok=True)
-    experiment_dir = experiment_dir.joinpath('sem_seg')
+    experiment_dir = experiment_dir.joinpath('sem_seg_agco_real')
     experiment_dir.mkdir(exist_ok=True)
     if args.log_dir is None:
         experiment_dir = experiment_dir.joinpath(timestr)
@@ -87,15 +85,15 @@ def main(args):
     log_string('PARAMETER ...')
     log_string(args)
 
-    root = 'data/stanford_indoor3d/'
-    NUM_CLASSES = 13
+    root = '/home/morten/Repos/Pointnet_Pointnet2_pytorch/data/'
+    NUM_CLASSES = 3
     NUM_POINT = args.npoint
     BATCH_SIZE = args.batch_size
 
     print("start loading training data ...")
-    TRAIN_DATASET = S3DISDataset(split='train', data_root=root, num_point=NUM_POINT, test_area=args.test_area, block_size=1.0, sample_rate=1.0, transform=None)
+    TRAIN_DATASET = TractorsAndCombines(split='train', root=root)
     print("start loading test data ...")
-    TEST_DATASET = S3DISDataset(split='test', data_root=root, num_point=NUM_POINT, test_area=args.test_area, block_size=1.0, sample_rate=1.0, transform=None)
+    TEST_DATASET = TractorsAndCombines(split='test', root=root)
 
     trainDataLoader = torch.utils.data.DataLoader(TRAIN_DATASET, batch_size=BATCH_SIZE, shuffle=True, num_workers=10,
                                                   pin_memory=True, drop_last=True,
@@ -109,10 +107,15 @@ def main(args):
 
     '''MODEL LOADING'''
     MODEL = importlib.import_module(args.model)
+
     shutil.copy('models/%s.py' % args.model, str(experiment_dir))
     shutil.copy('models/pointnet2_utils.py', str(experiment_dir))
 
     classifier = MODEL.get_model(NUM_CLASSES).cuda()
+    print(classifier)
+    if torch.cuda.device_count() > 1:
+        print(f'Using {torch.cuda.device_count()} gpus.')
+        classifier = torch.nn.DataParallel(classifier)
     criterion = MODEL.get_loss().cuda()
     classifier.apply(inplace_relu)
 
@@ -254,17 +257,17 @@ def main(args):
                     total_iou_deno_class[l] += np.sum(((pred_val == l) | (batch_label == l)))
 
             labelweights = labelweights.astype(np.float32) / np.sum(labelweights.astype(np.float32))
-            mIoU = np.mean(np.array(total_correct_class) / (np.array(total_iou_deno_class, dtype=np.float) + 1e-6))
+            mIoU = np.mean(np.array(total_correct_class) / (np.array(total_iou_deno_class, dtype=np.float64) + 1e-6))
             log_string('eval mean loss: %f' % (loss_sum / float(num_batches)))
             log_string('eval point avg class IoU: %f' % (mIoU))
             log_string('eval point accuracy: %f' % (total_correct / float(total_seen)))
             log_string('eval point avg class acc: %f' % (
-                np.mean(np.array(total_correct_class) / (np.array(total_seen_class, dtype=np.float) + 1e-6))))
+                np.mean(np.array(total_correct_class) / (np.array(total_seen_class, dtype=np.float64) + 1e-6))))
 
             iou_per_class_str = '------- IoU --------\n'
             for l in range(NUM_CLASSES):
                 iou_per_class_str += 'class %s weight: %.3f, IoU: %.3f \n' % (
-                    seg_label_to_cat[l] + ' ' * (14 - len(seg_label_to_cat[l])), labelweights[l - 1],
+                    seg_label_to_cat[l] + ' ' * (14 - len(seg_label_to_cat[l])), labelweights[l],
                     total_correct_class[l] / float(total_iou_deno_class[l]))
 
             log_string(iou_per_class_str)
