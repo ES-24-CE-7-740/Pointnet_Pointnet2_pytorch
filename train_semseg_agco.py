@@ -311,6 +311,7 @@ def main(args):
                 log_string('Saving model....')
             log_string('Best mIoU: %f' % best_iou)
         global_epoch += 1
+    writer.close()
 
 
 if __name__ == '__main__':
