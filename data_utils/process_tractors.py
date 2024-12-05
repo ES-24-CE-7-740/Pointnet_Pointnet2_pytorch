@@ -2,6 +2,7 @@ import os
 import numpy as np
 import argparse
 from tqdm import tqdm
+from pathlib import Path
 
 def normalize_pc(points):
     centroid = np.mean(points, axis=0)
@@ -13,10 +14,22 @@ def normalize_pc(points):
 
 def process_tractors_and_combines(root, num_points):
     # Load data
-    train_path = os.path.join(root, 'dataset/Sequences/00')
-    train_data = [os.path.join(train_path, 'points', f) for f in os.listdir(os.path.join(train_path, 'points'))]
-    train_labels = [os.path.join(train_path, 'labels', f) for f in os.listdir(os.path.join(train_path, 'labels'))]
-    
+    root = Path(root)
+    sequences = ['00', '01']
+
+    # Initialize lists for points and labels
+    train_points = []
+    train_labels = []
+
+    for seq in sequences:
+        sequence_path = root / 'dataset' / 'Sequences' / seq
+        points_path = sequence_path / 'points'
+        labels_path = sequence_path / 'labels'
+
+        # Add points and labels to the respective lists
+        train_points.extend(points_path.iterdir())
+        train_labels.extend(labels_path.iterdir())
+
     validate_path = os.path.join(root, 'dataset/Sequences/03_val')
     validate_data = [os.path.join(validate_path, 'points', f) for f in os.listdir(os.path.join(validate_path, 'points'))]
     validate_labels = [os.path.join(validate_path, 'labels', f) for f in os.listdir(os.path.join(validate_path, 'labels'))]
@@ -26,7 +39,7 @@ def process_tractors_and_combines(root, num_points):
     test_labels = [os.path.join(test_path, 'labels', f) for f in os.listdir(os.path.join(test_path, 'labels'))]
     
     splits_str = ['train', 'validate', 'test']
-    splits_data = [train_data, validate_data, test_data]
+    splits_data = [train_points, validate_data, test_data]
     splits_labels = [train_labels, validate_labels, test_labels]
     
     # Process data
@@ -90,10 +103,13 @@ def process_tractors_and_combines(root, num_points):
             # Convert the label to int8
             label = label.round().astype(np.int8)
             
+            # Fetch the sequence
+            data_fn = Path(data_fn)
+            sequence = data_fn.parts[-3]
             
             # Save the processed pointcloud and label
-            np.save(os.path.join(save_dir, 'points', os.path.basename(data_fn)), pointcloud_processed)
-            np.save(os.path.join(save_dir, 'labels', os.path.basename(label_fn)), label)
+            np.save(os.path.join(save_dir, 'points', sequence + os.path.basename(data_fn)), pointcloud_processed)
+            np.save(os.path.join(save_dir, 'labels', sequence + os.path.basename(label_fn)), label)
     
     # Save the number of points sampled
     with open(os.path.join(root, 'processed_pointnet2', 'num_points.txt'), 'w') as file:
@@ -104,10 +120,10 @@ def process_tractors_and_combines(root, num_points):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process Tractors and Combines dataset')
-    parser.add_argument('--root', type=str, default='data/tractors_and_combines_synth', 
+    parser.add_argument('--root', type=str, default='data/', 
                         help='Path to the root directory of the dataset')
     
-    parser.add_argument('--num_points', type=int, default=100_000, 
+    parser.add_argument('--num_points', type=int, default=1000, 
                         help='Number of points to sample from the pointcloud')
     
     args = parser.parse_args()
