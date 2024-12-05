@@ -5,6 +5,7 @@ Date: Nov 2019
 import argparse
 import os
 from data_utils.AGCODataLoader import TractorsAndCombines
+from torch.utils.tensorboard import SummaryWriter
 import torch
 import datetime
 import logging
@@ -92,18 +93,18 @@ def main(args):
 
     print("start loading training data ...")
     TRAIN_DATASET = TractorsAndCombines(split='train', root=root)
-    print("start loading test data ...")
-    TEST_DATASET = TractorsAndCombines(split='test', root=root)
+    print("start loading validate data ...")
+    VALIDATE_DATASET = TractorsAndCombines(split='validate', root=root)
 
     trainDataLoader = torch.utils.data.DataLoader(TRAIN_DATASET, batch_size=BATCH_SIZE, shuffle=True, num_workers=10,
                                                   pin_memory=True, drop_last=True,
                                                   worker_init_fn=lambda x: np.random.seed(x + int(time.time())))
-    testDataLoader = torch.utils.data.DataLoader(TEST_DATASET, batch_size=BATCH_SIZE, shuffle=False, num_workers=10,
+    validateDataLoader = torch.utils.data.DataLoader(VALIDATE_DATASET, batch_size=BATCH_SIZE, shuffle=False, num_workers=10,
                                                  pin_memory=True, drop_last=True)
     weights = torch.Tensor(TRAIN_DATASET.labelweights).cuda()
 
     log_string("The number of training data is: %d" % len(TRAIN_DATASET))
-    log_string("The number of test data is: %d" % len(TEST_DATASET))
+    log_string("The number of validate data is: %d" % len(VALIDATE_DATASET))
 
     '''MODEL LOADING'''
     MODEL = importlib.import_module(args.model)
@@ -161,6 +162,9 @@ def main(args):
     global_epoch = 0
     best_iou = 0
 
+    # TensorBoard SummaryWriter
+    writer = SummaryWriter(log_dir=log_dir) ## FIXME: Change dir
+
     for epoch in range(start_epoch, args.epoch):
         '''Train on chopped scenes'''
         log_string('**** Epoch %d (%d/%s) ****' % (global_epoch + 1, epoch + 1, args.epoch))
@@ -202,8 +206,14 @@ def main(args):
             total_correct += correct
             total_seen += (BATCH_SIZE * NUM_POINT)
             loss_sum += loss
-        log_string('Training mean loss: %f' % (loss_sum / num_batches))
+        
+        # Log training loss
+        train_loss = loss_sum / num_batches
+        log_string('Training mean loss: %f' % (train_loss))
         log_string('Training accuracy: %f' % (total_correct / float(total_seen)))
+        
+        # Tensorboard logging
+        writer.add_scalar("train/loss", train_loss, epoch)
 
         if epoch % 5 == 0:
             logger.info('Save model...')
@@ -219,7 +229,7 @@ def main(args):
 
         '''Evaluate on chopped scenes'''
         with torch.no_grad():
-            num_batches = len(testDataLoader)
+            num_batches = len(validateDataLoader)
             total_correct = 0
             total_seen = 0
             loss_sum = 0
@@ -230,7 +240,7 @@ def main(args):
             classifier = classifier.eval()
 
             log_string('---- EPOCH %03d EVALUATION ----' % (global_epoch + 1))
-            for i, (points, target) in tqdm(enumerate(testDataLoader), total=len(testDataLoader), smoothing=0.9):
+            for i, (points, target) in tqdm(enumerate(validateDataLoader), total=len(validateDataLoader), smoothing=0.9):
                 points = points.data.numpy()
                 points = torch.Tensor(points)
                 points, target = points.float().cuda(), target.long().cuda()
@@ -258,12 +268,26 @@ def main(args):
 
             labelweights = labelweights.astype(np.float32) / np.sum(labelweights.astype(np.float32))
             mIoU = np.mean(np.array(total_correct_class) / (np.array(total_iou_deno_class, dtype=np.float64) + 1e-6))
-            log_string('eval mean loss: %f' % (loss_sum / float(num_batches)))
-            log_string('eval point avg class IoU: %f' % (mIoU))
-            log_string('eval point accuracy: %f' % (total_correct / float(total_seen)))
-            log_string('eval point avg class acc: %f' % (
-                np.mean(np.array(total_correct_class) / (np.array(total_seen_class, dtype=np.float64) + 1e-6))))
+            
+            # Loss logging
+            eval_loss = loss_sum / float(num_batches)
+            log_string('eval mean loss: %f' % (eval_loss))
+            writer.add_scalar("eval/loss", eval_loss, epoch)
+            
+            # OA(??) logging TODO: Check if actually OA
+            point_accuracy = total_correct / float(total_seen)
+            log_string('eval point accuracy: %f' % (point_accuracy))
+            writer.add_scalar("eval/OA", point_accuracy, epoch)
+            
+            # mAcc(??) logging TODO: Check if actually mAcc
+            mAcc = np.mean(np.array(total_correct_class) / (np.array(total_seen_class, dtype=np.float64) + 1e-6))
+            log_string('eval point avg class acc: %f' % (mAcc))
+            writer.add_scalar("eval/mAcc", mAcc, epoch)
 
+            # mIoU logging
+            log_string('eval mIoU: %f' % (mIoU))
+            writer.add_scalar("eval/mIoU", mIoU, epoch)
+            
             iou_per_class_str = '------- IoU --------\n'
             for l in range(NUM_CLASSES):
                 iou_per_class_str += 'class %s weight: %.3f, IoU: %.3f \n' % (
@@ -271,8 +295,6 @@ def main(args):
                     total_correct_class[l] / float(total_iou_deno_class[l]))
 
             log_string(iou_per_class_str)
-            log_string('Eval mean loss: %f' % (loss_sum / num_batches))
-            log_string('Eval accuracy: %f' % (total_correct / float(total_seen)))
 
             if mIoU >= best_iou:
                 best_iou = mIoU
