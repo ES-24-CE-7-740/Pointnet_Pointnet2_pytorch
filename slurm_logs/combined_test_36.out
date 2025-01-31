@@ -1,0 +1,24 @@
+Testing combined: 200
+Testing combined: 400
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='400_combined', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined/400/pointnet_combined')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.940655
+eval point avg class acc: 0.849792
+eval mIoU: 0.718830
+------- IoU --------
+class other         , IoU: 0.960 
+class tractor       , IoU: 0.495 
+class combine       , IoU: 0.701 
+
+Testing combined: 600
+Testing combined: 800
+Testing combined: 1000
+Testing combined_only_real: 200
+Testing combined_only_real: 400
+Testing combined_only_real: 600
+Testing combined_only_real: 800
+Testing combined_only_real: 1000
+Testing combined_only_real: 1200

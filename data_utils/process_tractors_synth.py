@@ -15,7 +15,7 @@ def normalize_pc(points):
 def process_tractors_and_combines(root, num_points):
     # Load data
     root = Path(root)
-    sequences = ['00', '01', '02', '03', '04', '07', '08', '09', '10']
+    sequences = ['02', '03', '04', '05', '06', '07', '08', '09', '10']
 
     # Initialize lists for points and labels
     train_points = []
@@ -30,11 +30,11 @@ def process_tractors_and_combines(root, num_points):
         train_points.extend(points_path.iterdir())
         train_labels.extend(labels_path.iterdir())
 
-    validate_path = os.path.join(root, 'dataset/sets/05')
+    validate_path = os.path.join(root, 'dataset/sets/00')
     validate_data = [os.path.join(validate_path, 'points', f) for f in os.listdir(os.path.join(validate_path, 'points'))]
     validate_labels = [os.path.join(validate_path, 'labels', f) for f in os.listdir(os.path.join(validate_path, 'labels'))]
     
-    test_path = os.path.join(root, 'dataset/sets/06')
+    test_path = os.path.join(root, 'dataset/sets/01')
     test_data = [os.path.join(test_path, 'points', f) for f in os.listdir(os.path.join(test_path, 'points'))]
     test_labels = [os.path.join(test_path, 'labels', f) for f in os.listdir(os.path.join(test_path, 'labels'))]
     
@@ -123,7 +123,7 @@ if __name__ == "__main__":
     parser.add_argument('--root', type=str, default='data/', 
                         help='Path to the root directory of the dataset')
     
-    parser.add_argument('--num_points', type=int, default=1000, 
+    parser.add_argument('--num_points', type=int, default=30000, 
                         help='Number of points to sample from the pointcloud')
     
     args = parser.parse_args()

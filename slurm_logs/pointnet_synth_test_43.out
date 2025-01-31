@@ -1,0 +1,13 @@
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='new_combined_400', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/agco_real/')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.951436
+eval point avg class acc: 0.882813
+eval mIoU: 0.759041
+------- IoU --------
+class other         , IoU: 0.969 
+class tractor       , IoU: 0.567 
+class combine       , IoU: 0.741 
+

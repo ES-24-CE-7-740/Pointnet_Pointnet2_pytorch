@@ -100,6 +100,8 @@ def main(args):
             pred_val = seg_pred.contiguous().cpu().data.numpy()
             seg_pred = seg_pred.contiguous().view(-1, NUM_CLASSES)
 
+            testDataLoader.collate_fn
+
             batch_label = target.cpu().data.numpy()
             target = target.view(-1, 1)[:, 0]
             pred_val = np.argmax(pred_val, 2)

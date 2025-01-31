@@ -1,0 +1,140 @@
+Testing combined: 200
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='200_combined', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined/200/pointnet_combined')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.946026
+eval point avg class acc: 0.908941
+eval mIoU: 0.764684
+------- IoU --------
+class other         , IoU: 0.953 
+class tractor       , IoU: 0.564 
+class combine       , IoU: 0.777 
+
+Testing combined: 600
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='600_combined', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined/600/pointnet_combined')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.956725
+eval point avg class acc: 0.893263
+eval mIoU: 0.778725
+------- IoU --------
+class other         , IoU: 0.972 
+class tractor       , IoU: 0.591 
+class combine       , IoU: 0.773 
+
+Testing combined: 800
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='800_combined', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined/800/pointnet_combined')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.959965
+eval point avg class acc: 0.904930
+eval mIoU: 0.795616
+------- IoU --------
+class other         , IoU: 0.972 
+class tractor       , IoU: 0.616 
+class combine       , IoU: 0.799 
+
+Testing combined: 1000
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='1000_combined', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined/1000/pointnet_combined')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.956723
+eval point avg class acc: 0.891744
+eval mIoU: 0.781353
+------- IoU --------
+class other         , IoU: 0.969 
+class tractor       , IoU: 0.589 
+class combine       , IoU: 0.786 
+
+Testing combined_only_real: 200
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='200_combined_only_real', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined/200/pointnet_only_real')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.909855
+eval point avg class acc: 0.808924
+eval mIoU: 0.641634
+------- IoU --------
+class other         , IoU: 0.932 
+class tractor       , IoU: 0.373 
+class combine       , IoU: 0.620 
+
+Testing combined_only_real: 400
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='400_combined_only_real', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined/400/pointnet_only_real')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.929147
+eval point avg class acc: 0.825420
+eval mIoU: 0.681931
+------- IoU --------
+class other         , IoU: 0.950 
+class tractor       , IoU: 0.403 
+class combine       , IoU: 0.693 
+
+Testing combined_only_real: 600
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='600_combined_only_real', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined/600/pointnet_only_real')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.950667
+eval point avg class acc: 0.827312
+eval mIoU: 0.723739
+------- IoU --------
+class other         , IoU: 0.975 
+class tractor       , IoU: 0.455 
+class combine       , IoU: 0.741 
+
+Testing combined_only_real: 800
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='800_combined_only_real', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined/800/pointnet_only_real')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.950380
+eval point avg class acc: 0.826666
+eval mIoU: 0.722275
+------- IoU --------
+class other         , IoU: 0.974 
+class tractor       , IoU: 0.444 
+class combine       , IoU: 0.749 
+
+Testing combined_only_real: 1000
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='1000_combined_only_real', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined/1000/pointnet_only_real')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.953773
+eval point avg class acc: 0.823273
+eval mIoU: 0.725949
+------- IoU --------
+class other         , IoU: 0.980 
+class tractor       , IoU: 0.443 
+class combine       , IoU: 0.755 
+
+Testing combined_only_real: 1200
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='1200_combined_only_real', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined/1200/pointnet_only_real')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.963594
+eval point avg class acc: 0.881501
+eval mIoU: 0.791839
+------- IoU --------
+class other         , IoU: 0.980 
+class tractor       , IoU: 0.595 
+class combine       , IoU: 0.801 
+

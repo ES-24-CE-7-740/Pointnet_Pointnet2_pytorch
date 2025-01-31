@@ -1,0 +1,1636 @@
+Running combined: 400
+PARAMETER ...
+Namespace(batch_size=16, decay_rate=0.0001, epoch=10, gpu='0,1', learning_rate=0.001, log_dir='400_combined', lr_decay=0.7, model='pointnet2_sem_seg', npoint=30000, optimizer='Adam', root_folder='/home/agco/datasets/tractors_and_combines_combined/400/pointnet_combined', step_size=10)
+start loading training data ...
+Processed data found!
+start loading validate data ...
+Processed data found!
+The number of training data is: 20001
+The number of validate data is: 600
+Using 2 gpus.
+No existing model, starting training from scratch...
+**** Epoch 1 (1/10) ****
+Training mean loss: 0.423702
+Training accuracy: 0.879246
+Saving at log/sem_seg_agco_real/400_combined/checkpoints/model.pth
+Saving model....
+---- EPOCH 001 EVALUATION ----
+eval mean loss: 0.510844
+eval point accuracy: 0.940565
+eval point avg class acc: 0.778911
+eval mIoU: 0.685435
+------- IoU --------
+class other          weight: 0.814, IoU: 0.965 
+class tractor        weight: 0.055, IoU: 0.388 
+class combine        weight: 0.132, IoU: 0.703 
+
+Saving at log/sem_seg_agco_real/400_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.685435
+**** Epoch 2 (2/10) ****
+Training mean loss: 0.215684
+Training accuracy: 0.954630
+---- EPOCH 002 EVALUATION ----
+eval mean loss: 0.331485
+eval point accuracy: 0.943190
+eval point avg class acc: 0.873779
+eval mIoU: 0.741277
+------- IoU --------
+class other          weight: 0.814, IoU: 0.959 
+class tractor        weight: 0.055, IoU: 0.535 
+class combine        weight: 0.132, IoU: 0.730 
+
+Saving at log/sem_seg_agco_real/400_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.741277
+**** Epoch 3 (3/10) ****
+Training mean loss: 0.180293
+Training accuracy: 0.960457
+---- EPOCH 003 EVALUATION ----
+eval mean loss: 0.488662
+eval point accuracy: 0.941165
+eval point avg class acc: 0.864478
+eval mIoU: 0.715628
+------- IoU --------
+class other          weight: 0.814, IoU: 0.973 
+class tractor        weight: 0.055, IoU: 0.518 
+class combine        weight: 0.132, IoU: 0.656 
+
+Best mIoU: 0.741277
+**** Epoch 4 (4/10) ****
+Training mean loss: 0.158684
+Training accuracy: 0.964150
+---- EPOCH 004 EVALUATION ----
+eval mean loss: 0.359870
+eval point accuracy: 0.951505
+eval point avg class acc: 0.861416
+eval mIoU: 0.759774
+------- IoU --------
+class other          weight: 0.814, IoU: 0.967 
+class tractor        weight: 0.055, IoU: 0.570 
+class combine        weight: 0.132, IoU: 0.742 
+
+Saving at log/sem_seg_agco_real/400_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.759774
+**** Epoch 5 (5/10) ****
+Training mean loss: 0.133041
+Training accuracy: 0.968498
+---- EPOCH 005 EVALUATION ----
+eval mean loss: 0.385821
+eval point accuracy: 0.949943
+eval point avg class acc: 0.874624
+eval mIoU: 0.754480
+------- IoU --------
+class other          weight: 0.814, IoU: 0.970 
+class tractor        weight: 0.055, IoU: 0.571 
+class combine        weight: 0.132, IoU: 0.722 
+
+Best mIoU: 0.759774
+**** Epoch 6 (6/10) ****
+Training mean loss: 0.111879
+Training accuracy: 0.972133
+Saving at log/sem_seg_agco_real/400_combined/checkpoints/model.pth
+Saving model....
+---- EPOCH 006 EVALUATION ----
+eval mean loss: 0.419913
+eval point accuracy: 0.953050
+eval point avg class acc: 0.886690
+eval mIoU: 0.767338
+------- IoU --------
+class other          weight: 0.814, IoU: 0.973 
+class tractor        weight: 0.055, IoU: 0.597 
+class combine        weight: 0.132, IoU: 0.733 
+
+Saving at log/sem_seg_agco_real/400_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.767338
+**** Epoch 7 (7/10) ****
+Training mean loss: 0.093493
+Training accuracy: 0.975013
+---- EPOCH 007 EVALUATION ----
+eval mean loss: 0.359947
+eval point accuracy: 0.956407
+eval point avg class acc: 0.903958
+eval mIoU: 0.790439
+------- IoU --------
+class other          weight: 0.814, IoU: 0.970 
+class tractor        weight: 0.055, IoU: 0.639 
+class combine        weight: 0.132, IoU: 0.762 
+
+Saving at log/sem_seg_agco_real/400_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.790439
+**** Epoch 8 (8/10) ****
+Training mean loss: 0.078176
+Training accuracy: 0.977558
+---- EPOCH 008 EVALUATION ----
+eval mean loss: 0.419635
+eval point accuracy: 0.954572
+eval point avg class acc: 0.898336
+eval mIoU: 0.778165
+------- IoU --------
+class other          weight: 0.814, IoU: 0.971 
+class tractor        weight: 0.055, IoU: 0.611 
+class combine        weight: 0.132, IoU: 0.752 
+
+Best mIoU: 0.790439
+**** Epoch 9 (9/10) ****
+Training mean loss: 0.067313
+Training accuracy: 0.979339
+---- EPOCH 009 EVALUATION ----
+eval mean loss: 0.416926
+eval point accuracy: 0.956163
+eval point avg class acc: 0.904229
+eval mIoU: 0.786842
+------- IoU --------
+class other          weight: 0.814, IoU: 0.971 
+class tractor        weight: 0.055, IoU: 0.623 
+class combine        weight: 0.132, IoU: 0.767 
+
+Best mIoU: 0.790439
+**** Epoch 10 (10/10) ****
+Training mean loss: 0.062586
+Training accuracy: 0.980140
+---- EPOCH 010 EVALUATION ----
+eval mean loss: 0.425237
+eval point accuracy: 0.955442
+eval point avg class acc: 0.900646
+eval mIoU: 0.781979
+------- IoU --------
+class other          weight: 0.814, IoU: 0.972 
+class tractor        weight: 0.055, IoU: 0.617 
+class combine        weight: 0.132, IoU: 0.757 
+
+Best mIoU: 0.790439
+Running combined: 600
+PARAMETER ...
+Namespace(batch_size=16, decay_rate=0.0001, epoch=10, gpu='0,1', learning_rate=0.001, log_dir='600_combined', lr_decay=0.7, model='pointnet2_sem_seg', npoint=30000, optimizer='Adam', root_folder='/home/agco/datasets/tractors_and_combines_combined/600/pointnet_combined', step_size=10)
+start loading training data ...
+Processed data found!
+start loading validate data ...
+Processed data found!
+The number of training data is: 20003
+The number of validate data is: 600
+Using 2 gpus.
+No existing model, starting training from scratch...
+**** Epoch 1 (1/10) ****
+Training mean loss: 0.493564
+Training accuracy: 0.860049
+Saving at log/sem_seg_agco_real/600_combined/checkpoints/model.pth
+Saving model....
+---- EPOCH 001 EVALUATION ----
+eval mean loss: 0.401093
+eval point accuracy: 0.950161
+eval point avg class acc: 0.818655
+eval mIoU: 0.731953
+------- IoU --------
+class other          weight: 0.814, IoU: 0.970 
+class tractor        weight: 0.055, IoU: 0.487 
+class combine        weight: 0.132, IoU: 0.740 
+
+Saving at log/sem_seg_agco_real/600_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.731953
+**** Epoch 2 (2/10) ****
+Training mean loss: 0.244452
+Training accuracy: 0.950670
+---- EPOCH 002 EVALUATION ----
+eval mean loss: 0.267869
+eval point accuracy: 0.952032
+eval point avg class acc: 0.872659
+eval mIoU: 0.769132
+------- IoU --------
+class other          weight: 0.814, IoU: 0.964 
+class tractor        weight: 0.055, IoU: 0.580 
+class combine        weight: 0.132, IoU: 0.763 
+
+Saving at log/sem_seg_agco_real/600_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.769132
+**** Epoch 3 (3/10) ****
+Training mean loss: 0.202636
+Training accuracy: 0.957515
+---- EPOCH 003 EVALUATION ----
+eval mean loss: 0.393445
+eval point accuracy: 0.957776
+eval point avg class acc: 0.866832
+eval mIoU: 0.783057
+------- IoU --------
+class other          weight: 0.814, IoU: 0.971 
+class tractor        weight: 0.055, IoU: 0.610 
+class combine        weight: 0.132, IoU: 0.768 
+
+Saving at log/sem_seg_agco_real/600_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.783057
+**** Epoch 4 (4/10) ****
+Training mean loss: 0.174801
+Training accuracy: 0.962505
+---- EPOCH 004 EVALUATION ----
+eval mean loss: 0.279300
+eval point accuracy: 0.950608
+eval point avg class acc: 0.891919
+eval mIoU: 0.774979
+------- IoU --------
+class other          weight: 0.814, IoU: 0.961 
+class tractor        weight: 0.055, IoU: 0.604 
+class combine        weight: 0.132, IoU: 0.761 
+
+Best mIoU: 0.783057
+**** Epoch 5 (5/10) ****
+Training mean loss: 0.150738
+Training accuracy: 0.966015
+---- EPOCH 005 EVALUATION ----
+eval mean loss: 0.315022
+eval point accuracy: 0.947328
+eval point avg class acc: 0.897982
+eval mIoU: 0.753118
+------- IoU --------
+class other          weight: 0.814, IoU: 0.968 
+class tractor        weight: 0.055, IoU: 0.583 
+class combine        weight: 0.132, IoU: 0.708 
+
+Best mIoU: 0.783057
+**** Epoch 6 (6/10) ****
+Training mean loss: 0.126240
+Training accuracy: 0.970545
+Saving at log/sem_seg_agco_real/600_combined/checkpoints/model.pth
+Saving model....
+---- EPOCH 006 EVALUATION ----
+eval mean loss: 0.310838
+eval point accuracy: 0.962786
+eval point avg class acc: 0.901550
+eval mIoU: 0.813680
+------- IoU --------
+class other          weight: 0.814, IoU: 0.974 
+class tractor        weight: 0.055, IoU: 0.673 
+class combine        weight: 0.132, IoU: 0.794 
+
+Saving at log/sem_seg_agco_real/600_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.813680
+**** Epoch 7 (7/10) ****
+Training mean loss: 0.108757
+Training accuracy: 0.973326
+---- EPOCH 007 EVALUATION ----
+eval mean loss: 0.191551
+eval point accuracy: 0.964751
+eval point avg class acc: 0.932131
+eval mIoU: 0.839554
+------- IoU --------
+class other          weight: 0.814, IoU: 0.970 
+class tractor        weight: 0.055, IoU: 0.736 
+class combine        weight: 0.132, IoU: 0.813 
+
+Saving at log/sem_seg_agco_real/600_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.839554
+**** Epoch 8 (8/10) ****
+Training mean loss: 0.093000
+Training accuracy: 0.975841
+---- EPOCH 008 EVALUATION ----
+eval mean loss: 0.168588
+eval point accuracy: 0.966801
+eval point avg class acc: 0.947694
+eval mIoU: 0.852225
+------- IoU --------
+class other          weight: 0.814, IoU: 0.970 
+class tractor        weight: 0.055, IoU: 0.757 
+class combine        weight: 0.132, IoU: 0.829 
+
+Saving at log/sem_seg_agco_real/600_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.852225
+**** Epoch 9 (9/10) ****
+Training mean loss: 0.081544
+Training accuracy: 0.977786
+---- EPOCH 009 EVALUATION ----
+eval mean loss: 0.188261
+eval point accuracy: 0.970441
+eval point avg class acc: 0.947024
+eval mIoU: 0.861698
+------- IoU --------
+class other          weight: 0.814, IoU: 0.975 
+class tractor        weight: 0.055, IoU: 0.772 
+class combine        weight: 0.132, IoU: 0.838 
+
+Saving at log/sem_seg_agco_real/600_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.861698
+**** Epoch 10 (10/10) ****
+Training mean loss: 0.074708
+Training accuracy: 0.978758
+---- EPOCH 010 EVALUATION ----
+eval mean loss: 0.179608
+eval point accuracy: 0.969052
+eval point avg class acc: 0.948771
+eval mIoU: 0.859947
+------- IoU --------
+class other          weight: 0.814, IoU: 0.973 
+class tractor        weight: 0.055, IoU: 0.771 
+class combine        weight: 0.132, IoU: 0.836 
+
+Best mIoU: 0.861698
+Running combined: 800
+PARAMETER ...
+Namespace(batch_size=16, decay_rate=0.0001, epoch=10, gpu='0,1', learning_rate=0.001, log_dir='800_combined', lr_decay=0.7, model='pointnet2_sem_seg', npoint=30000, optimizer='Adam', root_folder='/home/agco/datasets/tractors_and_combines_combined/800/pointnet_combined', step_size=10)
+start loading training data ...
+Processed data found!
+start loading validate data ...
+Processed data found!
+The number of training data is: 20001
+The number of validate data is: 600
+Using 2 gpus.
+No existing model, starting training from scratch...
+**** Epoch 1 (1/10) ****
+Training mean loss: 0.480419
+Training accuracy: 0.867019
+Saving at log/sem_seg_agco_real/800_combined/checkpoints/model.pth
+Saving model....
+---- EPOCH 001 EVALUATION ----
+eval mean loss: 0.269773
+eval point accuracy: 0.948302
+eval point avg class acc: 0.907892
+eval mIoU: 0.784376
+------- IoU --------
+class other          weight: 0.814, IoU: 0.957 
+class tractor        weight: 0.055, IoU: 0.675 
+class combine        weight: 0.132, IoU: 0.721 
+
+Saving at log/sem_seg_agco_real/800_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.784376
+**** Epoch 2 (2/10) ****
+Training mean loss: 0.248967
+Training accuracy: 0.950518
+---- EPOCH 002 EVALUATION ----
+eval mean loss: 0.422019
+eval point accuracy: 0.944486
+eval point avg class acc: 0.880028
+eval mIoU: 0.734315
+------- IoU --------
+class other          weight: 0.814, IoU: 0.971 
+class tractor        weight: 0.055, IoU: 0.554 
+class combine        weight: 0.132, IoU: 0.677 
+
+Best mIoU: 0.784376
+**** Epoch 3 (3/10) ****
+Training mean loss: 0.208087
+Training accuracy: 0.957542
+---- EPOCH 003 EVALUATION ----
+eval mean loss: 0.389228
+eval point accuracy: 0.896841
+eval point avg class acc: 0.872859
+eval mIoU: 0.647274
+------- IoU --------
+class other          weight: 0.814, IoU: 0.914 
+class tractor        weight: 0.055, IoU: 0.409 
+class combine        weight: 0.132, IoU: 0.618 
+
+Best mIoU: 0.784376
+**** Epoch 4 (4/10) ****
+Training mean loss: 0.179814
+Training accuracy: 0.961942
+---- EPOCH 004 EVALUATION ----
+eval mean loss: 0.255961
+eval point accuracy: 0.964318
+eval point avg class acc: 0.914148
+eval mIoU: 0.823057
+------- IoU --------
+class other          weight: 0.814, IoU: 0.974 
+class tractor        weight: 0.055, IoU: 0.695 
+class combine        weight: 0.132, IoU: 0.800 
+
+Saving at log/sem_seg_agco_real/800_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.823057
+**** Epoch 5 (5/10) ****
+Training mean loss: 0.151310
+Training accuracy: 0.967192
+---- EPOCH 005 EVALUATION ----
+eval mean loss: 0.321432
+eval point accuracy: 0.958256
+eval point avg class acc: 0.905559
+eval mIoU: 0.799661
+------- IoU --------
+class other          weight: 0.814, IoU: 0.970 
+class tractor        weight: 0.055, IoU: 0.662 
+class combine        weight: 0.132, IoU: 0.767 
+
+Best mIoU: 0.823057
+**** Epoch 6 (6/10) ****
+Training mean loss: 0.129485
+Training accuracy: 0.970436
+Saving at log/sem_seg_agco_real/800_combined/checkpoints/model.pth
+Saving model....
+---- EPOCH 006 EVALUATION ----
+eval mean loss: 0.362740
+eval point accuracy: 0.954577
+eval point avg class acc: 0.917879
+eval mIoU: 0.780767
+------- IoU --------
+class other          weight: 0.814, IoU: 0.973 
+class tractor        weight: 0.055, IoU: 0.627 
+class combine        weight: 0.132, IoU: 0.743 
+
+Best mIoU: 0.823057
+**** Epoch 7 (7/10) ****
+Training mean loss: 0.108452
+Training accuracy: 0.973529
+---- EPOCH 007 EVALUATION ----
+eval mean loss: 0.163439
+eval point accuracy: 0.969237
+eval point avg class acc: 0.944655
+eval mIoU: 0.850511
+------- IoU --------
+class other          weight: 0.814, IoU: 0.976 
+class tractor        weight: 0.055, IoU: 0.737 
+class combine        weight: 0.132, IoU: 0.839 
+
+Saving at log/sem_seg_agco_real/800_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.850511
+**** Epoch 8 (8/10) ****
+Training mean loss: 0.089470
+Training accuracy: 0.976492
+---- EPOCH 008 EVALUATION ----
+eval mean loss: 0.194610
+eval point accuracy: 0.968082
+eval point avg class acc: 0.941834
+eval mIoU: 0.849545
+------- IoU --------
+class other          weight: 0.814, IoU: 0.974 
+class tractor        weight: 0.055, IoU: 0.749 
+class combine        weight: 0.132, IoU: 0.825 
+
+Best mIoU: 0.850511
+**** Epoch 9 (9/10) ****
+Training mean loss: 0.076877
+Training accuracy: 0.978414
+---- EPOCH 009 EVALUATION ----
+eval mean loss: 0.184372
+eval point accuracy: 0.969048
+eval point avg class acc: 0.947575
+eval mIoU: 0.854332
+------- IoU --------
+class other          weight: 0.814, IoU: 0.974 
+class tractor        weight: 0.055, IoU: 0.754 
+class combine        weight: 0.132, IoU: 0.834 
+
+Saving at log/sem_seg_agco_real/800_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.854332
+**** Epoch 10 (10/10) ****
+Training mean loss: 0.072700
+Training accuracy: 0.979236
+---- EPOCH 010 EVALUATION ----
+eval mean loss: 0.181553
+eval point accuracy: 0.971136
+eval point avg class acc: 0.946291
+eval mIoU: 0.861218
+------- IoU --------
+class other          weight: 0.814, IoU: 0.976 
+class tractor        weight: 0.055, IoU: 0.763 
+class combine        weight: 0.132, IoU: 0.844 
+
+Saving at log/sem_seg_agco_real/800_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.861218
+Running combined: 1000
+PARAMETER ...
+Namespace(batch_size=16, decay_rate=0.0001, epoch=10, gpu='0,1', learning_rate=0.001, log_dir='1000_combined', lr_decay=0.7, model='pointnet2_sem_seg', npoint=30000, optimizer='Adam', root_folder='/home/agco/datasets/tractors_and_combines_combined/1000/pointnet_combined', step_size=10)
+start loading training data ...
+Processed data found!
+start loading validate data ...
+Processed data found!
+The number of training data is: 20001
+The number of validate data is: 600
+Using 2 gpus.
+No existing model, starting training from scratch...
+**** Epoch 1 (1/10) ****
+Training mean loss: 0.462059
+Training accuracy: 0.879861
+Saving at log/sem_seg_agco_real/1000_combined/checkpoints/model.pth
+Saving model....
+---- EPOCH 001 EVALUATION ----
+eval mean loss: 0.386358
+eval point accuracy: 0.946826
+eval point avg class acc: 0.865877
+eval mIoU: 0.746227
+------- IoU --------
+class other          weight: 0.814, IoU: 0.966 
+class tractor        weight: 0.055, IoU: 0.575 
+class combine        weight: 0.131, IoU: 0.697 
+
+Saving at log/sem_seg_agco_real/1000_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.746227
+**** Epoch 2 (2/10) ****
+Training mean loss: 0.247926
+Training accuracy: 0.950893
+---- EPOCH 002 EVALUATION ----
+eval mean loss: 0.386220
+eval point accuracy: 0.816505
+eval point avg class acc: 0.845076
+eval mIoU: 0.550469
+------- IoU --------
+class other          weight: 0.814, IoU: 0.798 
+class tractor        weight: 0.055, IoU: 0.349 
+class combine        weight: 0.131, IoU: 0.504 
+
+Best mIoU: 0.746227
+**** Epoch 3 (3/10) ****
+Training mean loss: 0.212290
+Training accuracy: 0.956570
+---- EPOCH 003 EVALUATION ----
+eval mean loss: 0.247963
+eval point accuracy: 0.909868
+eval point avg class acc: 0.907816
+eval mIoU: 0.694221
+------- IoU --------
+class other          weight: 0.814, IoU: 0.910 
+class tractor        weight: 0.055, IoU: 0.442 
+class combine        weight: 0.131, IoU: 0.730 
+
+Best mIoU: 0.746227
+**** Epoch 4 (4/10) ****
+Training mean loss: 0.186682
+Training accuracy: 0.960645
+---- EPOCH 004 EVALUATION ----
+eval mean loss: 0.202223
+eval point accuracy: 0.967282
+eval point avg class acc: 0.926932
+eval mIoU: 0.849325
+------- IoU --------
+class other          weight: 0.814, IoU: 0.972 
+class tractor        weight: 0.055, IoU: 0.756 
+class combine        weight: 0.131, IoU: 0.820 
+
+Saving at log/sem_seg_agco_real/1000_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.849325
+**** Epoch 5 (5/10) ****
+Training mean loss: 0.158909
+Training accuracy: 0.965386
+---- EPOCH 005 EVALUATION ----
+eval mean loss: 0.287172
+eval point accuracy: 0.939855
+eval point avg class acc: 0.914159
+eval mIoU: 0.751682
+------- IoU --------
+class other          weight: 0.814, IoU: 0.949 
+class tractor        weight: 0.055, IoU: 0.560 
+class combine        weight: 0.131, IoU: 0.746 
+
+Best mIoU: 0.849325
+**** Epoch 6 (6/10) ****
+Training mean loss: 0.134017
+Training accuracy: 0.968967
+Saving at log/sem_seg_agco_real/1000_combined/checkpoints/model.pth
+Saving model....
+---- EPOCH 006 EVALUATION ----
+eval mean loss: 0.246231
+eval point accuracy: 0.961341
+eval point avg class acc: 0.924607
+eval mIoU: 0.813777
+------- IoU --------
+class other          weight: 0.814, IoU: 0.973 
+class tractor        weight: 0.055, IoU: 0.689 
+class combine        weight: 0.131, IoU: 0.779 
+
+Best mIoU: 0.849325
+**** Epoch 7 (7/10) ****
+Training mean loss: 0.113504
+Training accuracy: 0.972895
+---- EPOCH 007 EVALUATION ----
+eval mean loss: 0.197212
+eval point accuracy: 0.964034
+eval point avg class acc: 0.944938
+eval mIoU: 0.834543
+------- IoU --------
+class other          weight: 0.814, IoU: 0.970 
+class tractor        weight: 0.055, IoU: 0.717 
+class combine        weight: 0.131, IoU: 0.816 
+
+Best mIoU: 0.849325
+**** Epoch 8 (8/10) ****
+Training mean loss: 0.095223
+Training accuracy: 0.975526
+---- EPOCH 008 EVALUATION ----
+eval mean loss: 0.149070
+eval point accuracy: 0.969438
+eval point avg class acc: 0.948757
+eval mIoU: 0.861040
+------- IoU --------
+class other          weight: 0.814, IoU: 0.972 
+class tractor        weight: 0.055, IoU: 0.768 
+class combine        weight: 0.131, IoU: 0.843 
+
+Saving at log/sem_seg_agco_real/1000_combined/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.861040
+**** Epoch 9 (9/10) ****
+Training mean loss: 0.084105
+Training accuracy: 0.977371
+---- EPOCH 009 EVALUATION ----
+eval mean loss: 0.162948
+eval point accuracy: 0.966692
+eval point avg class acc: 0.946641
+eval mIoU: 0.850056
+------- IoU --------
+class other          weight: 0.814, IoU: 0.971 
+class tractor        weight: 0.055, IoU: 0.753 
+class combine        weight: 0.131, IoU: 0.827 
+
+Best mIoU: 0.861040
+**** Epoch 10 (10/10) ****
+Training mean loss: 0.078580
+Training accuracy: 0.978281
+---- EPOCH 010 EVALUATION ----
+eval mean loss: 0.157998
+eval point accuracy: 0.969644
+eval point avg class acc: 0.950610
+eval mIoU: 0.860665
+------- IoU --------
+class other          weight: 0.814, IoU: 0.973 
+class tractor        weight: 0.055, IoU: 0.768 
+class combine        weight: 0.131, IoU: 0.841 
+
+Best mIoU: 0.861040
+Running combined - only real: 200
+PARAMETER ...
+Namespace(batch_size=16, decay_rate=0.0001, epoch=10, gpu='0,1', learning_rate=0.001, log_dir='200_combined_only_real', lr_decay=0.7, model='pointnet2_sem_seg', npoint=30000, optimizer='Adam', root_folder='/home/agco/datasets/tractors_and_combines_combined/200/pointnet_only_real', step_size=10)
+start loading training data ...
+Processed data found!
+start loading validate data ...
+Processed data found!
+The number of training data is: 10002
+The number of validate data is: 600
+Using 2 gpus.
+No existing model, starting training from scratch...
+**** Epoch 1 (1/10) ****
+Training mean loss: 0.232478
+Training accuracy: 0.894375
+Saving at log/sem_seg_agco_real/200_combined_only_real/checkpoints/model.pth
+Saving model....
+---- EPOCH 001 EVALUATION ----
+eval mean loss: 1.533291
+eval point accuracy: 0.884440
+eval point avg class acc: 0.716019
+eval mIoU: 0.552454
+------- IoU --------
+class other          weight: 0.814, IoU: 0.946 
+class tractor        weight: 0.055, IoU: 0.276 
+class combine        weight: 0.132, IoU: 0.436 
+
+Saving at log/sem_seg_agco_real/200_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.552454
+**** Epoch 2 (2/10) ****
+Training mean loss: 0.054154
+Training accuracy: 0.979980
+---- EPOCH 002 EVALUATION ----
+eval mean loss: 1.473374
+eval point accuracy: 0.897808
+eval point avg class acc: 0.702660
+eval mIoU: 0.561750
+------- IoU --------
+class other          weight: 0.814, IoU: 0.965 
+class tractor        weight: 0.055, IoU: 0.265 
+class combine        weight: 0.132, IoU: 0.456 
+
+Saving at log/sem_seg_agco_real/200_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.561750
+**** Epoch 3 (3/10) ****
+Training mean loss: 0.040585
+Training accuracy: 0.983595
+---- EPOCH 003 EVALUATION ----
+eval mean loss: 1.278003
+eval point accuracy: 0.893283
+eval point avg class acc: 0.704793
+eval mIoU: 0.560142
+------- IoU --------
+class other          weight: 0.814, IoU: 0.956 
+class tractor        weight: 0.055, IoU: 0.260 
+class combine        weight: 0.132, IoU: 0.464 
+
+Best mIoU: 0.561750
+**** Epoch 4 (4/10) ****
+Training mean loss: 0.036028
+Training accuracy: 0.984874
+---- EPOCH 004 EVALUATION ----
+eval mean loss: 1.063481
+eval point accuracy: 0.911382
+eval point avg class acc: 0.752962
+eval mIoU: 0.609502
+------- IoU --------
+class other          weight: 0.814, IoU: 0.961 
+class tractor        weight: 0.055, IoU: 0.327 
+class combine        weight: 0.132, IoU: 0.541 
+
+Saving at log/sem_seg_agco_real/200_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.609502
+**** Epoch 5 (5/10) ****
+Training mean loss: 0.035957
+Training accuracy: 0.985342
+---- EPOCH 005 EVALUATION ----
+eval mean loss: 1.359855
+eval point accuracy: 0.901075
+eval point avg class acc: 0.772326
+eval mIoU: 0.596558
+------- IoU --------
+class other          weight: 0.814, IoU: 0.955 
+class tractor        weight: 0.055, IoU: 0.337 
+class combine        weight: 0.132, IoU: 0.498 
+
+Best mIoU: 0.609502
+**** Epoch 6 (6/10) ****
+Training mean loss: 0.033613
+Training accuracy: 0.986110
+Saving at log/sem_seg_agco_real/200_combined_only_real/checkpoints/model.pth
+Saving model....
+---- EPOCH 006 EVALUATION ----
+eval mean loss: 1.254469
+eval point accuracy: 0.917011
+eval point avg class acc: 0.742811
+eval mIoU: 0.608547
+------- IoU --------
+class other          weight: 0.814, IoU: 0.974 
+class tractor        weight: 0.055, IoU: 0.325 
+class combine        weight: 0.132, IoU: 0.526 
+
+Best mIoU: 0.609502
+**** Epoch 7 (7/10) ****
+Training mean loss: 0.027850
+Training accuracy: 0.987779
+---- EPOCH 007 EVALUATION ----
+eval mean loss: 2.025266
+eval point accuracy: 0.885659
+eval point avg class acc: 0.722308
+eval mIoU: 0.550933
+------- IoU --------
+class other          weight: 0.814, IoU: 0.955 
+class tractor        weight: 0.055, IoU: 0.279 
+class combine        weight: 0.132, IoU: 0.419 
+
+Best mIoU: 0.609502
+**** Epoch 8 (8/10) ****
+Training mean loss: 0.022249
+Training accuracy: 0.989279
+---- EPOCH 008 EVALUATION ----
+eval mean loss: 1.810878
+eval point accuracy: 0.903469
+eval point avg class acc: 0.740065
+eval mIoU: 0.583349
+------- IoU --------
+class other          weight: 0.814, IoU: 0.967 
+class tractor        weight: 0.055, IoU: 0.311 
+class combine        weight: 0.132, IoU: 0.472 
+
+Best mIoU: 0.609502
+**** Epoch 9 (9/10) ****
+Training mean loss: 0.020859
+Training accuracy: 0.989818
+---- EPOCH 009 EVALUATION ----
+eval mean loss: 1.901191
+eval point accuracy: 0.904628
+eval point avg class acc: 0.734971
+eval mIoU: 0.579260
+------- IoU --------
+class other          weight: 0.814, IoU: 0.972 
+class tractor        weight: 0.055, IoU: 0.318 
+class combine        weight: 0.132, IoU: 0.447 
+
+Best mIoU: 0.609502
+**** Epoch 10 (10/10) ****
+Training mean loss: 0.019636
+Training accuracy: 0.990215
+---- EPOCH 010 EVALUATION ----
+eval mean loss: 2.064105
+eval point accuracy: 0.901768
+eval point avg class acc: 0.729267
+eval mIoU: 0.572281
+------- IoU --------
+class other          weight: 0.814, IoU: 0.971 
+class tractor        weight: 0.055, IoU: 0.310 
+class combine        weight: 0.132, IoU: 0.436 
+
+Best mIoU: 0.609502
+Running combined - only real: 400
+PARAMETER ...
+Namespace(batch_size=16, decay_rate=0.0001, epoch=10, gpu='0,1', learning_rate=0.001, log_dir='400_combined_only_real', lr_decay=0.7, model='pointnet2_sem_seg', npoint=30000, optimizer='Adam', root_folder='/home/agco/datasets/tractors_and_combines_combined/400/pointnet_only_real', step_size=10)
+start loading training data ...
+Processed data found!
+start loading validate data ...
+Processed data found!
+The number of training data is: 10000
+The number of validate data is: 600
+Using 2 gpus.
+No existing model, starting training from scratch...
+**** Epoch 1 (1/10) ****
+Training mean loss: 0.293920
+Training accuracy: 0.889307
+Saving at log/sem_seg_agco_real/400_combined_only_real/checkpoints/model.pth
+Saving model....
+---- EPOCH 001 EVALUATION ----
+eval mean loss: 1.334289
+eval point accuracy: 0.864384
+eval point avg class acc: 0.633207
+eval mIoU: 0.496114
+------- IoU --------
+class other          weight: 0.814, IoU: 0.928 
+class tractor        weight: 0.055, IoU: 0.203 
+class combine        weight: 0.132, IoU: 0.357 
+
+Saving at log/sem_seg_agco_real/400_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.496114
+**** Epoch 2 (2/10) ****
+Training mean loss: 0.081183
+Training accuracy: 0.974072
+---- EPOCH 002 EVALUATION ----
+eval mean loss: 0.690474
+eval point accuracy: 0.905032
+eval point avg class acc: 0.766067
+eval mIoU: 0.613466
+------- IoU --------
+class other          weight: 0.814, IoU: 0.938 
+class tractor        weight: 0.055, IoU: 0.314 
+class combine        weight: 0.132, IoU: 0.588 
+
+Saving at log/sem_seg_agco_real/400_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.613466
+**** Epoch 3 (3/10) ****
+Training mean loss: 0.063885
+Training accuracy: 0.978260
+---- EPOCH 003 EVALUATION ----
+eval mean loss: 0.808772
+eval point accuracy: 0.932230
+eval point avg class acc: 0.769817
+eval mIoU: 0.655833
+------- IoU --------
+class other          weight: 0.814, IoU: 0.969 
+class tractor        weight: 0.055, IoU: 0.352 
+class combine        weight: 0.132, IoU: 0.646 
+
+Saving at log/sem_seg_agco_real/400_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.655833
+**** Epoch 4 (4/10) ****
+Training mean loss: 0.050847
+Training accuracy: 0.981273
+---- EPOCH 004 EVALUATION ----
+eval mean loss: 1.421501
+eval point accuracy: 0.921301
+eval point avg class acc: 0.708675
+eval mIoU: 0.615670
+------- IoU --------
+class other          weight: 0.814, IoU: 0.955 
+class tractor        weight: 0.055, IoU: 0.304 
+class combine        weight: 0.132, IoU: 0.588 
+
+Best mIoU: 0.655833
+**** Epoch 5 (5/10) ****
+Training mean loss: 0.048281
+Training accuracy: 0.982081
+---- EPOCH 005 EVALUATION ----
+eval mean loss: 1.350292
+eval point accuracy: 0.922917
+eval point avg class acc: 0.776740
+eval mIoU: 0.633730
+------- IoU --------
+class other          weight: 0.814, IoU: 0.974 
+class tractor        weight: 0.055, IoU: 0.388 
+class combine        weight: 0.132, IoU: 0.540 
+
+Best mIoU: 0.655833
+**** Epoch 6 (6/10) ****
+Training mean loss: 0.047294
+Training accuracy: 0.982603
+Saving at log/sem_seg_agco_real/400_combined_only_real/checkpoints/model.pth
+Saving model....
+---- EPOCH 006 EVALUATION ----
+eval mean loss: 0.708783
+eval point accuracy: 0.938894
+eval point avg class acc: 0.791757
+eval mIoU: 0.680501
+------- IoU --------
+class other          weight: 0.814, IoU: 0.974 
+class tractor        weight: 0.055, IoU: 0.401 
+class combine        weight: 0.132, IoU: 0.667 
+
+Saving at log/sem_seg_agco_real/400_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.680501
+**** Epoch 7 (7/10) ****
+Training mean loss: 0.033999
+Training accuracy: 0.985563
+---- EPOCH 007 EVALUATION ----
+eval mean loss: 1.018908
+eval point accuracy: 0.938871
+eval point avg class acc: 0.832869
+eval mIoU: 0.698921
+------- IoU --------
+class other          weight: 0.814, IoU: 0.973 
+class tractor        weight: 0.055, IoU: 0.467 
+class combine        weight: 0.132, IoU: 0.657 
+
+Saving at log/sem_seg_agco_real/400_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.698921
+**** Epoch 8 (8/10) ****
+Training mean loss: 0.028462
+Training accuracy: 0.987024
+---- EPOCH 008 EVALUATION ----
+eval mean loss: 0.956684
+eval point accuracy: 0.940253
+eval point avg class acc: 0.812575
+eval mIoU: 0.693453
+------- IoU --------
+class other          weight: 0.814, IoU: 0.975 
+class tractor        weight: 0.055, IoU: 0.446 
+class combine        weight: 0.132, IoU: 0.659 
+
+Best mIoU: 0.698921
+**** Epoch 9 (9/10) ****
+Training mean loss: 0.024952
+Training accuracy: 0.988030
+---- EPOCH 009 EVALUATION ----
+eval mean loss: 1.123389
+eval point accuracy: 0.939322
+eval point avg class acc: 0.815864
+eval mIoU: 0.692318
+------- IoU --------
+class other          weight: 0.814, IoU: 0.975 
+class tractor        weight: 0.055, IoU: 0.453 
+class combine        weight: 0.132, IoU: 0.649 
+
+Best mIoU: 0.698921
+**** Epoch 10 (10/10) ****
+Training mean loss: 0.023532
+Training accuracy: 0.988571
+---- EPOCH 010 EVALUATION ----
+eval mean loss: 1.137045
+eval point accuracy: 0.939010
+eval point avg class acc: 0.815004
+eval mIoU: 0.690781
+------- IoU --------
+class other          weight: 0.814, IoU: 0.975 
+class tractor        weight: 0.055, IoU: 0.450 
+class combine        weight: 0.132, IoU: 0.647 
+
+Best mIoU: 0.698921
+Running combined - only real: 600
+PARAMETER ...
+Namespace(batch_size=16, decay_rate=0.0001, epoch=10, gpu='0,1', learning_rate=0.001, log_dir='600_combined_only_real', lr_decay=0.7, model='pointnet2_sem_seg', npoint=30000, optimizer='Adam', root_folder='/home/agco/datasets/tractors_and_combines_combined/600/pointnet_only_real', step_size=10)
+start loading training data ...
+Processed data found!
+start loading validate data ...
+Processed data found!
+The number of training data is: 10002
+The number of validate data is: 600
+Using 2 gpus.
+No existing model, starting training from scratch...
+**** Epoch 1 (1/10) ****
+Training mean loss: 0.364936
+Training accuracy: 0.871440
+Saving at log/sem_seg_agco_real/600_combined_only_real/checkpoints/model.pth
+Saving model....
+---- EPOCH 001 EVALUATION ----
+eval mean loss: 0.363935
+eval point accuracy: 0.957971
+eval point avg class acc: 0.839196
+eval mIoU: 0.776484
+------- IoU --------
+class other          weight: 0.814, IoU: 0.967 
+class tractor        weight: 0.055, IoU: 0.568 
+class combine        weight: 0.132, IoU: 0.794 
+
+Saving at log/sem_seg_agco_real/600_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.776484
+**** Epoch 2 (2/10) ****
+Training mean loss: 0.100980
+Training accuracy: 0.970861
+---- EPOCH 002 EVALUATION ----
+eval mean loss: 0.349576
+eval point accuracy: 0.922208
+eval point avg class acc: 0.870488
+eval mIoU: 0.690306
+------- IoU --------
+class other          weight: 0.814, IoU: 0.942 
+class tractor        weight: 0.055, IoU: 0.435 
+class combine        weight: 0.132, IoU: 0.693 
+
+Best mIoU: 0.776484
+**** Epoch 3 (3/10) ****
+Training mean loss: 0.091857
+Training accuracy: 0.973484
+---- EPOCH 003 EVALUATION ----
+eval mean loss: 0.394757
+eval point accuracy: 0.930686
+eval point avg class acc: 0.879680
+eval mIoU: 0.710347
+------- IoU --------
+class other          weight: 0.814, IoU: 0.949 
+class tractor        weight: 0.055, IoU: 0.472 
+class combine        weight: 0.132, IoU: 0.709 
+
+Best mIoU: 0.776484
+**** Epoch 4 (4/10) ****
+Training mean loss: 0.067130
+Training accuracy: 0.977643
+---- EPOCH 004 EVALUATION ----
+eval mean loss: 1.112344
+eval point accuracy: 0.926346
+eval point avg class acc: 0.814353
+eval mIoU: 0.655361
+------- IoU --------
+class other          weight: 0.814, IoU: 0.974 
+class tractor        weight: 0.055, IoU: 0.419 
+class combine        weight: 0.132, IoU: 0.574 
+
+Best mIoU: 0.776484
+**** Epoch 5 (5/10) ****
+Training mean loss: 0.062838
+Training accuracy: 0.978666
+---- EPOCH 005 EVALUATION ----
+eval mean loss: 0.866107
+eval point accuracy: 0.917272
+eval point avg class acc: 0.803775
+eval mIoU: 0.622524
+------- IoU --------
+class other          weight: 0.814, IoU: 0.975 
+class tractor        weight: 0.055, IoU: 0.412 
+class combine        weight: 0.132, IoU: 0.480 
+
+Best mIoU: 0.776484
+**** Epoch 6 (6/10) ****
+Training mean loss: 0.051089
+Training accuracy: 0.981232
+Saving at log/sem_seg_agco_real/600_combined_only_real/checkpoints/model.pth
+Saving model....
+---- EPOCH 006 EVALUATION ----
+eval mean loss: 0.316447
+eval point accuracy: 0.961324
+eval point avg class acc: 0.891465
+eval mIoU: 0.797652
+------- IoU --------
+class other          weight: 0.814, IoU: 0.976 
+class tractor        weight: 0.055, IoU: 0.634 
+class combine        weight: 0.132, IoU: 0.782 
+
+Saving at log/sem_seg_agco_real/600_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.797652
+**** Epoch 7 (7/10) ****
+Training mean loss: 0.044579
+Training accuracy: 0.982811
+---- EPOCH 007 EVALUATION ----
+eval mean loss: 0.512602
+eval point accuracy: 0.952773
+eval point avg class acc: 0.874811
+eval mIoU: 0.754899
+------- IoU --------
+class other          weight: 0.814, IoU: 0.978 
+class tractor        weight: 0.055, IoU: 0.562 
+class combine        weight: 0.132, IoU: 0.725 
+
+Best mIoU: 0.797652
+**** Epoch 8 (8/10) ****
+Training mean loss: 0.035145
+Training accuracy: 0.984937
+---- EPOCH 008 EVALUATION ----
+eval mean loss: 0.449740
+eval point accuracy: 0.958993
+eval point avg class acc: 0.894319
+eval mIoU: 0.783346
+------- IoU --------
+class other          weight: 0.814, IoU: 0.980 
+class tractor        weight: 0.055, IoU: 0.615 
+class combine        weight: 0.132, IoU: 0.756 
+
+Best mIoU: 0.797652
+**** Epoch 9 (9/10) ****
+Training mean loss: 0.029326
+Training accuracy: 0.986495
+---- EPOCH 009 EVALUATION ----
+eval mean loss: 0.448013
+eval point accuracy: 0.955347
+eval point avg class acc: 0.893818
+eval mIoU: 0.771574
+------- IoU --------
+class other          weight: 0.814, IoU: 0.977 
+class tractor        weight: 0.055, IoU: 0.596 
+class combine        weight: 0.132, IoU: 0.741 
+
+Best mIoU: 0.797652
+**** Epoch 10 (10/10) ****
+Training mean loss: 0.027286
+Training accuracy: 0.987020
+---- EPOCH 010 EVALUATION ----
+eval mean loss: 0.425339
+eval point accuracy: 0.958274
+eval point avg class acc: 0.900468
+eval mIoU: 0.785556
+------- IoU --------
+class other          weight: 0.814, IoU: 0.977 
+class tractor        weight: 0.055, IoU: 0.621 
+class combine        weight: 0.132, IoU: 0.758 
+
+Best mIoU: 0.797652
+Running combined - only real: 800
+PARAMETER ...
+Namespace(batch_size=16, decay_rate=0.0001, epoch=10, gpu='0,1', learning_rate=0.001, log_dir='800_combined_only_real', lr_decay=0.7, model='pointnet2_sem_seg', npoint=30000, optimizer='Adam', root_folder='/home/agco/datasets/tractors_and_combines_combined/800/pointnet_only_real', step_size=10)
+start loading training data ...
+Processed data found!
+start loading validate data ...
+Processed data found!
+The number of training data is: 10000
+The number of validate data is: 600
+Using 2 gpus.
+No existing model, starting training from scratch...
+**** Epoch 1 (1/10) ****
+Training mean loss: 0.398034
+Training accuracy: 0.878093
+Saving at log/sem_seg_agco_real/800_combined_only_real/checkpoints/model.pth
+Saving model....
+---- EPOCH 001 EVALUATION ----
+eval mean loss: 0.477751
+eval point accuracy: 0.934301
+eval point avg class acc: 0.838170
+eval mIoU: 0.715019
+------- IoU --------
+class other          weight: 0.814, IoU: 0.952 
+class tractor        weight: 0.055, IoU: 0.530 
+class combine        weight: 0.132, IoU: 0.664 
+
+Saving at log/sem_seg_agco_real/800_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.715019
+**** Epoch 2 (2/10) ****
+Training mean loss: 0.118867
+Training accuracy: 0.968107
+---- EPOCH 002 EVALUATION ----
+eval mean loss: 0.274236
+eval point accuracy: 0.960570
+eval point avg class acc: 0.905749
+eval mIoU: 0.800429
+------- IoU --------
+class other          weight: 0.814, IoU: 0.974 
+class tractor        weight: 0.055, IoU: 0.639 
+class combine        weight: 0.132, IoU: 0.788 
+
+Saving at log/sem_seg_agco_real/800_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.800429
+**** Epoch 3 (3/10) ****
+Training mean loss: 0.093272
+Training accuracy: 0.973392
+---- EPOCH 003 EVALUATION ----
+eval mean loss: 0.269349
+eval point accuracy: 0.930376
+eval point avg class acc: 0.895623
+eval mIoU: 0.738538
+------- IoU --------
+class other          weight: 0.814, IoU: 0.935 
+class tractor        weight: 0.055, IoU: 0.588 
+class combine        weight: 0.132, IoU: 0.693 
+
+Best mIoU: 0.800429
+**** Epoch 4 (4/10) ****
+Training mean loss: 0.080006
+Training accuracy: 0.976164
+---- EPOCH 004 EVALUATION ----
+eval mean loss: 0.276704
+eval point accuracy: 0.938439
+eval point avg class acc: 0.897938
+eval mIoU: 0.744434
+------- IoU --------
+class other          weight: 0.814, IoU: 0.946 
+class tractor        weight: 0.055, IoU: 0.534 
+class combine        weight: 0.132, IoU: 0.754 
+
+Best mIoU: 0.800429
+**** Epoch 5 (5/10) ****
+Training mean loss: 0.073040
+Training accuracy: 0.977360
+---- EPOCH 005 EVALUATION ----
+eval mean loss: 0.220348
+eval point accuracy: 0.972017
+eval point avg class acc: 0.916475
+eval mIoU: 0.851757
+------- IoU --------
+class other          weight: 0.814, IoU: 0.979 
+class tractor        weight: 0.055, IoU: 0.728 
+class combine        weight: 0.132, IoU: 0.848 
+
+Saving at log/sem_seg_agco_real/800_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.851757
+**** Epoch 6 (6/10) ****
+Training mean loss: 0.060359
+Training accuracy: 0.980412
+Saving at log/sem_seg_agco_real/800_combined_only_real/checkpoints/model.pth
+Saving model....
+---- EPOCH 006 EVALUATION ----
+eval mean loss: 0.160955
+eval point accuracy: 0.974749
+eval point avg class acc: 0.940248
+eval mIoU: 0.874142
+------- IoU --------
+class other          weight: 0.814, IoU: 0.979 
+class tractor        weight: 0.055, IoU: 0.780 
+class combine        weight: 0.132, IoU: 0.863 
+
+Saving at log/sem_seg_agco_real/800_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.874142
+**** Epoch 7 (7/10) ****
+Training mean loss: 0.044026
+Training accuracy: 0.983415
+---- EPOCH 007 EVALUATION ----
+eval mean loss: 0.230435
+eval point accuracy: 0.972622
+eval point avg class acc: 0.920740
+eval mIoU: 0.856058
+------- IoU --------
+class other          weight: 0.814, IoU: 0.980 
+class tractor        weight: 0.055, IoU: 0.744 
+class combine        weight: 0.132, IoU: 0.844 
+
+Best mIoU: 0.874142
+**** Epoch 8 (8/10) ****
+Training mean loss: 0.036544
+Training accuracy: 0.985140
+---- EPOCH 008 EVALUATION ----
+eval mean loss: 0.210300
+eval point accuracy: 0.970023
+eval point avg class acc: 0.940438
+eval mIoU: 0.853923
+------- IoU --------
+class other          weight: 0.814, IoU: 0.976 
+class tractor        weight: 0.055, IoU: 0.744 
+class combine        weight: 0.132, IoU: 0.842 
+
+Best mIoU: 0.874142
+**** Epoch 9 (9/10) ****
+Training mean loss: 0.031326
+Training accuracy: 0.986603
+---- EPOCH 009 EVALUATION ----
+eval mean loss: 0.224764
+eval point accuracy: 0.971130
+eval point avg class acc: 0.938386
+eval mIoU: 0.854456
+------- IoU --------
+class other          weight: 0.814, IoU: 0.979 
+class tractor        weight: 0.055, IoU: 0.748 
+class combine        weight: 0.132, IoU: 0.836 
+
+Best mIoU: 0.874142
+**** Epoch 10 (10/10) ****
+Training mean loss: 0.028421
+Training accuracy: 0.987296
+---- EPOCH 010 EVALUATION ----
+eval mean loss: 0.224835
+eval point accuracy: 0.971019
+eval point avg class acc: 0.940647
+eval mIoU: 0.854237
+------- IoU --------
+class other          weight: 0.814, IoU: 0.979 
+class tractor        weight: 0.055, IoU: 0.746 
+class combine        weight: 0.132, IoU: 0.838 
+
+Best mIoU: 0.874142
+Running combined - only real: 1000
+PARAMETER ...
+Namespace(batch_size=16, decay_rate=0.0001, epoch=10, gpu='0,1', learning_rate=0.001, log_dir='1000_combined_only_real', lr_decay=0.7, model='pointnet2_sem_seg', npoint=30000, optimizer='Adam', root_folder='/home/agco/datasets/tractors_and_combines_combined/1000/pointnet_only_real', step_size=10)
+start loading training data ...
+Processed data found!
+start loading validate data ...
+Processed data found!
+The number of training data is: 10000
+The number of validate data is: 600
+Using 2 gpus.
+No existing model, starting training from scratch...
+**** Epoch 1 (1/10) ****
+Training mean loss: 0.415732
+Training accuracy: 0.854628
+Saving at log/sem_seg_agco_real/1000_combined_only_real/checkpoints/model.pth
+Saving model....
+---- EPOCH 001 EVALUATION ----
+eval mean loss: 2.159553
+eval point accuracy: 0.405270
+eval point avg class acc: 0.544372
+eval mIoU: 0.247753
+------- IoU --------
+class other          weight: 0.814, IoU: 0.375 
+class tractor        weight: 0.055, IoU: 0.080 
+class combine        weight: 0.132, IoU: 0.289 
+
+Saving at log/sem_seg_agco_real/1000_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.247753
+**** Epoch 2 (2/10) ****
+Training mean loss: 0.124932
+Training accuracy: 0.966350
+---- EPOCH 002 EVALUATION ----
+eval mean loss: 0.555904
+eval point accuracy: 0.931734
+eval point avg class acc: 0.822025
+eval mIoU: 0.677998
+------- IoU --------
+class other          weight: 0.814, IoU: 0.966 
+class tractor        weight: 0.055, IoU: 0.476 
+class combine        weight: 0.132, IoU: 0.591 
+
+Saving at log/sem_seg_agco_real/1000_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.677998
+**** Epoch 3 (3/10) ****
+Training mean loss: 0.104008
+Training accuracy: 0.971969
+---- EPOCH 003 EVALUATION ----
+eval mean loss: 0.335957
+eval point accuracy: 0.956341
+eval point avg class acc: 0.904433
+eval mIoU: 0.791571
+------- IoU --------
+class other          weight: 0.814, IoU: 0.970 
+class tractor        weight: 0.055, IoU: 0.651 
+class combine        weight: 0.132, IoU: 0.754 
+
+Saving at log/sem_seg_agco_real/1000_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.791571
+**** Epoch 4 (4/10) ****
+Training mean loss: 0.091805
+Training accuracy: 0.973995
+---- EPOCH 004 EVALUATION ----
+eval mean loss: 0.352949
+eval point accuracy: 0.916404
+eval point avg class acc: 0.862339
+eval mIoU: 0.681284
+------- IoU --------
+class other          weight: 0.814, IoU: 0.933 
+class tractor        weight: 0.055, IoU: 0.480 
+class combine        weight: 0.132, IoU: 0.630 
+
+Best mIoU: 0.791571
+**** Epoch 5 (5/10) ****
+Training mean loss: 0.083626
+Training accuracy: 0.976108
+---- EPOCH 005 EVALUATION ----
+eval mean loss: 0.217368
+eval point accuracy: 0.934919
+eval point avg class acc: 0.912514
+eval mIoU: 0.747331
+------- IoU --------
+class other          weight: 0.814, IoU: 0.934 
+class tractor        weight: 0.055, IoU: 0.497 
+class combine        weight: 0.132, IoU: 0.811 
+
+Best mIoU: 0.791571
+**** Epoch 6 (6/10) ****
+Training mean loss: 0.065942
+Training accuracy: 0.979472
+Saving at log/sem_seg_agco_real/1000_combined_only_real/checkpoints/model.pth
+Saving model....
+---- EPOCH 006 EVALUATION ----
+eval mean loss: 0.215043
+eval point accuracy: 0.968773
+eval point avg class acc: 0.931581
+eval mIoU: 0.837911
+------- IoU --------
+class other          weight: 0.814, IoU: 0.979 
+class tractor        weight: 0.055, IoU: 0.707 
+class combine        weight: 0.132, IoU: 0.828 
+
+Saving at log/sem_seg_agco_real/1000_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.837911
+**** Epoch 7 (7/10) ****
+Training mean loss: 0.053956
+Training accuracy: 0.981743
+---- EPOCH 007 EVALUATION ----
+eval mean loss: 0.265101
+eval point accuracy: 0.944876
+eval point avg class acc: 0.926192
+eval mIoU: 0.768121
+------- IoU --------
+class other          weight: 0.814, IoU: 0.952 
+class tractor        weight: 0.055, IoU: 0.569 
+class combine        weight: 0.132, IoU: 0.783 
+
+Best mIoU: 0.837911
+**** Epoch 8 (8/10) ****
+Training mean loss: 0.044823
+Training accuracy: 0.983640
+---- EPOCH 008 EVALUATION ----
+eval mean loss: 0.416941
+eval point accuracy: 0.958245
+eval point avg class acc: 0.908884
+eval mIoU: 0.785265
+------- IoU --------
+class other          weight: 0.814, IoU: 0.978 
+class tractor        weight: 0.055, IoU: 0.622 
+class combine        weight: 0.132, IoU: 0.755 
+
+Best mIoU: 0.837911
+**** Epoch 9 (9/10) ****
+Training mean loss: 0.036727
+Training accuracy: 0.985605
+---- EPOCH 009 EVALUATION ----
+eval mean loss: 0.343154
+eval point accuracy: 0.963165
+eval point avg class acc: 0.926650
+eval mIoU: 0.812167
+------- IoU --------
+class other          weight: 0.814, IoU: 0.978 
+class tractor        weight: 0.055, IoU: 0.667 
+class combine        weight: 0.132, IoU: 0.792 
+
+Best mIoU: 0.837911
+**** Epoch 10 (10/10) ****
+Training mean loss: 0.033418
+Training accuracy: 0.986403
+---- EPOCH 010 EVALUATION ----
+eval mean loss: 0.374556
+eval point accuracy: 0.962089
+eval point avg class acc: 0.923146
+eval mIoU: 0.805592
+------- IoU --------
+class other          weight: 0.814, IoU: 0.978 
+class tractor        weight: 0.055, IoU: 0.656 
+class combine        weight: 0.132, IoU: 0.782 
+
+Best mIoU: 0.837911
+Running combined - only real: 1200
+PARAMETER ...
+Namespace(batch_size=16, decay_rate=0.0001, epoch=10, gpu='0,1', learning_rate=0.001, log_dir='1200_combined_only_real', lr_decay=0.7, model='pointnet2_sem_seg', npoint=30000, optimizer='Adam', root_folder='/home/agco/datasets/tractors_and_combines_combined/1200/pointnet_only_real', step_size=10)
+start loading training data ...
+Processed data found!
+start loading validate data ...
+Processed data found!
+The number of training data is: 9972
+The number of validate data is: 600
+Using 2 gpus.
+No existing model, starting training from scratch...
+**** Epoch 1 (1/10) ****
+Training mean loss: 0.431864
+Training accuracy: 0.851190
+Saving at log/sem_seg_agco_real/1200_combined_only_real/checkpoints/model.pth
+Saving model....
+---- EPOCH 001 EVALUATION ----
+eval mean loss: 0.525072
+eval point accuracy: 0.947745
+eval point avg class acc: 0.787204
+eval mIoU: 0.712086
+------- IoU --------
+class other          weight: 0.814, IoU: 0.964 
+class tractor        weight: 0.055, IoU: 0.431 
+class combine        weight: 0.132, IoU: 0.741 
+
+Saving at log/sem_seg_agco_real/1200_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.712086
+**** Epoch 2 (2/10) ****
+Training mean loss: 0.151544
+Training accuracy: 0.958537
+---- EPOCH 002 EVALUATION ----
+eval mean loss: 0.292234
+eval point accuracy: 0.962126
+eval point avg class acc: 0.906026
+eval mIoU: 0.814548
+------- IoU --------
+class other          weight: 0.814, IoU: 0.971 
+class tractor        weight: 0.055, IoU: 0.678 
+class combine        weight: 0.132, IoU: 0.795 
+
+Saving at log/sem_seg_agco_real/1200_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.814548
+**** Epoch 3 (3/10) ****
+Training mean loss: 0.119513
+Training accuracy: 0.966891
+---- EPOCH 003 EVALUATION ----
+eval mean loss: 0.184121
+eval point accuracy: 0.961987
+eval point avg class acc: 0.924843
+eval mIoU: 0.820523
+------- IoU --------
+class other          weight: 0.814, IoU: 0.967 
+class tractor        weight: 0.055, IoU: 0.661 
+class combine        weight: 0.132, IoU: 0.833 
+
+Saving at log/sem_seg_agco_real/1200_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.820523
+**** Epoch 4 (4/10) ****
+Training mean loss: 0.108687
+Training accuracy: 0.969530
+---- EPOCH 004 EVALUATION ----
+eval mean loss: 0.354014
+eval point accuracy: 0.919076
+eval point avg class acc: 0.868518
+eval mIoU: 0.683332
+------- IoU --------
+class other          weight: 0.814, IoU: 0.939 
+class tractor        weight: 0.055, IoU: 0.437 
+class combine        weight: 0.132, IoU: 0.674 
+
+Best mIoU: 0.820523
+**** Epoch 5 (5/10) ****
+Training mean loss: 0.099164
+Training accuracy: 0.972182
+---- EPOCH 005 EVALUATION ----
+eval mean loss: 0.168441
+eval point accuracy: 0.972529
+eval point avg class acc: 0.933032
+eval mIoU: 0.859172
+------- IoU --------
+class other          weight: 0.814, IoU: 0.979 
+class tractor        weight: 0.055, IoU: 0.750 
+class combine        weight: 0.132, IoU: 0.849 
+
+Saving at log/sem_seg_agco_real/1200_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.859172
+**** Epoch 6 (6/10) ****
+Training mean loss: 0.080802
+Training accuracy: 0.975955
+Saving at log/sem_seg_agco_real/1200_combined_only_real/checkpoints/model.pth
+Saving model....
+---- EPOCH 006 EVALUATION ----
+eval mean loss: 0.199531
+eval point accuracy: 0.965648
+eval point avg class acc: 0.927741
+eval mIoU: 0.831836
+------- IoU --------
+class other          weight: 0.814, IoU: 0.972 
+class tractor        weight: 0.055, IoU: 0.690 
+class combine        weight: 0.132, IoU: 0.834 
+
+Best mIoU: 0.859172
+**** Epoch 7 (7/10) ****
+Training mean loss: 0.063186
+Training accuracy: 0.979702
+---- EPOCH 007 EVALUATION ----
+eval mean loss: 0.240192
+eval point accuracy: 0.969713
+eval point avg class acc: 0.924389
+eval mIoU: 0.838542
+------- IoU --------
+class other          weight: 0.814, IoU: 0.981 
+class tractor        weight: 0.055, IoU: 0.710 
+class combine        weight: 0.132, IoU: 0.824 
+
+Best mIoU: 0.859172
+**** Epoch 8 (8/10) ****
+Training mean loss: 0.052373
+Training accuracy: 0.982209
+---- EPOCH 008 EVALUATION ----
+eval mean loss: 0.196060
+eval point accuracy: 0.969459
+eval point avg class acc: 0.936807
+eval mIoU: 0.844160
+------- IoU --------
+class other          weight: 0.814, IoU: 0.978 
+class tractor        weight: 0.055, IoU: 0.717 
+class combine        weight: 0.132, IoU: 0.838 
+
+Best mIoU: 0.859172
+**** Epoch 9 (9/10) ****
+Training mean loss: 0.044182
+Training accuracy: 0.984153
+---- EPOCH 009 EVALUATION ----
+eval mean loss: 0.178621
+eval point accuracy: 0.971524
+eval point avg class acc: 0.943588
+eval mIoU: 0.859603
+------- IoU --------
+class other          weight: 0.814, IoU: 0.977 
+class tractor        weight: 0.055, IoU: 0.754 
+class combine        weight: 0.132, IoU: 0.848 
+
+Saving at log/sem_seg_agco_real/1200_combined_only_real/checkpoints/best_model.pth
+Saving model....
+Best mIoU: 0.859603
+**** Epoch 10 (10/10) ****
+Training mean loss: 0.040469
+Training accuracy: 0.985170
+---- EPOCH 010 EVALUATION ----
+eval mean loss: 0.200969
+eval point accuracy: 0.970352
+eval point avg class acc: 0.944634
+eval mIoU: 0.853742
+------- IoU --------
+class other          weight: 0.814, IoU: 0.977 
+class tractor        weight: 0.055, IoU: 0.745 
+class combine        weight: 0.132, IoU: 0.839 
+
+Best mIoU: 0.859603

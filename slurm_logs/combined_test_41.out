@@ -1,0 +1,84 @@
+Testing evenly_spread: 200
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='evenly_sampled_200', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined_even_sampling/200')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.965803
+eval point avg class acc: 0.878441
+eval mIoU: 0.794247
+------- IoU --------
+class other         , IoU: 0.984 
+class tractor       , IoU: 0.596 
+class combine       , IoU: 0.803 
+
+Testing evenly_spread: 400
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='evenly_sampled_400', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined_even_sampling/400')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.960299
+eval point avg class acc: 0.867355
+eval mIoU: 0.773796
+------- IoU --------
+class other         , IoU: 0.978 
+class tractor       , IoU: 0.553 
+class combine       , IoU: 0.790 
+
+Testing evenly_spread: 600
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='evenly_sampled_600', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined_even_sampling/600')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.958351
+eval point avg class acc: 0.860079
+eval mIoU: 0.761545
+------- IoU --------
+class other         , IoU: 0.979 
+class tractor       , IoU: 0.532 
+class combine       , IoU: 0.773 
+
+Testing evenly_spread: 800
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='evenly_sampled_800', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined_even_sampling/800')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.966820
+eval point avg class acc: 0.894018
+eval mIoU: 0.810121
+------- IoU --------
+class other         , IoU: 0.980 
+class tractor       , IoU: 0.629 
+class combine       , IoU: 0.821 
+
+Testing evenly_spread: 1000
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='evenly_sampled_1000', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined_even_sampling/1000')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.965189
+eval point avg class acc: 0.886223
+eval mIoU: 0.799177
+------- IoU --------
+class other         , IoU: 0.980 
+class tractor       , IoU: 0.598 
+class combine       , IoU: 0.820 
+
+Testing evenly_spread: 1200
+PARAMETER ...
+Namespace(batch_size=1, gpu='0,1', log_dir='evenly_sampled_1200', model='pointnet2_sem_seg', num_point=30000, root_folder='/home/agco/datasets/tractors_and_combines_combined_even_sampling/1200')
+Processed data found!
+The number of test data is: 601
+---- Test Results ----
+eval point accuracy: 0.964948
+eval point avg class acc: 0.885770
+eval mIoU: 0.798384
+------- IoU --------
+class other         , IoU: 0.980 
+class tractor       , IoU: 0.602 
+class combine       , IoU: 0.813 
+
