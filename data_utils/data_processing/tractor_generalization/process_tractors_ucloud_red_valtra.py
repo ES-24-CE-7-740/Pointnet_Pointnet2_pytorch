@@ -16,9 +16,9 @@ def process_tractors_and_combines(root, num_points):
     # Load data
     root = Path(root)
 
-    train_seq = ['001', '003', '005', '007']
-    val_seq = ['002']
-    test_seq = ['104', '106']
+    train_seq = ['017']
+    val_seq = ['117']
+    test_seq = [] # Use the same testset as blue valtra
 
     # Initialize lists for points and labels
     train_points = []
@@ -30,7 +30,7 @@ def process_tractors_and_combines(root, num_points):
 
     # Fetch training points
     for seq in train_seq:
-        sequence_path = root / 'dataset' / 'Sequences' / seq
+        sequence_path = root / 'dataset' / 'sets' / seq
         points_path = sequence_path / 'points'
         labels_path = sequence_path / 'labels'
 
@@ -40,7 +40,7 @@ def process_tractors_and_combines(root, num_points):
 
     # Fetch validation points
     for seq in val_seq:
-        sequence_path = root / 'dataset' / 'Sequences' / seq
+        sequence_path = root / 'dataset' / 'sets' / seq
         points_path = sequence_path / 'points'
         labels_path = sequence_path / 'labels'
 
@@ -50,7 +50,7 @@ def process_tractors_and_combines(root, num_points):
 
     # Fetch test points
     for seq in test_seq:
-        sequence_path = root / 'dataset' / 'Sequences' / seq
+        sequence_path = root / 'dataset' / 'sets' / seq
         points_path = sequence_path / 'points'
         labels_path = sequence_path / 'labels'
 
@@ -81,7 +81,7 @@ def process_tractors_and_combines(root, num_points):
     for split_name, split_data, split_label in zip(splits_str, splits_data, splits_labels):
         
         # Pathing of processed data
-        addi_path = "pointnet_dec_both_cfg"
+        addi_path = "red_valtra"
 
         save_dir = os.path.join(root, addi_path, 'processed_pointnet2', f'{split_name}')
         points_dir = os.path.join(save_dir, 'points')
@@ -157,22 +157,22 @@ def process_tractors_and_combines(root, num_points):
 def get_learning_map(ignore_index):
     learning_map = {
         ignore_index: ignore_index,
-        41:3,
-        20:3,
-        21:3,
-        22:3,
-        23:3,
-        10:3,
-        11:2,
-        12:2,
-        13:2,
-        14:2,
-        15:2,
-        16:2,
-        17:2,
-        18:2,
-        19:2,
-        30:1,
+        41:2, # katana (forage harvester)
+        20:2, # combine
+        21:2, # ideal_10t (combine harvester)
+        22:2, # fendt_paralevel (combine harvester)
+        23:2, # laverda (combine harvester)
+        10:1, # tractor
+        11:1, # blue_valtra (tractor)
+        12:1, # grey_valtra (tractor)
+        13:1, # massey (tractor)
+        14:1, # fendt300 (tractor)
+        15:1, # fendt1000 (tractor)
+        16:1, # orange_valtra (tractor)
+        17:1, # red_valtra (tractor)
+        18:1, # new_holland (tractor - not in real)
+        19:1, # deer_kramer (tractor - not in real)
+        30:0, # trailer
         0:0,
         1:0,
     }
@@ -180,19 +180,19 @@ def get_learning_map(ignore_index):
         
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Process Tractors and Combines dataset')
-    parser.add_argument('--root', type=str, default='data/', 
-                        help='Path to the root directory of the dataset')
+    # parser = argparse.ArgumentParser(description='Process Tractors and Combines dataset')
+    # parser.add_argument('--root', type=str, default='data/', 
+    #                     help='Path to the root directory of the dataset')
     
-    parser.add_argument('--num_points', type=int, default=30000, 
-                        help='Number of points to sample from the pointcloud')
+    # parser.add_argument('--num_points', type=int, default=30000, 
+    #                     help='Number of points to sample from the pointcloud')
 
     
-    args = parser.parse_args()
+    # args = parser.parse_args()
     
-    # Process the dataset
-    process_tractors_and_combines(root=args.root, num_points=args.num_points)
+    # # Process the dataset
+    # process_tractors_and_combines(root=args.root, num_points=args.num_points)
     
     # For debugging
-    #process_tractors_and_combines(root='/work/3dgs-drive/data/agco_all_real_with_model_labes/dec_both_cfg_wml/', num_points=30000)
+    process_tractors_and_combines(root='/work/3dgs-drive/data/agco_zs_synth/', num_points=30000)
 

@@ -32,7 +32,7 @@ def parse_args():
     parser.add_argument('--model', type=str, default='pointnet2_sem_seg', help='model name [default: pointnet2_sem_seg]')
     parser.add_argument('--root_folder', type=str, default='/home/agco/datasets/agco_real/', help='Path to root folder of data.')
     parser.add_argument('--batch_size', type=int, default=1, help='batch size in testing [default: 1]')
-    parser.add_argument('--gpu', type=str, default='0,1', help='specify gpu device')
+    parser.add_argument('--gpu', type=str, default='0', help='specify gpu device')
     parser.add_argument('--num_point', type=int, default=30000, help='point number [default: 30000]')
     parser.add_argument('--log_dir', type=str, default="size_200_test_300_epochs", help='experiment root')
     return parser.parse_args()
@@ -45,7 +45,10 @@ def main(args):
 
     '''HYPER PARAMETER'''
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
-    experiment_dir = '/home/morten/Repos/Pointnet_Pointnet2_pytorch/log/sem_seg_agco_real/' + args.log_dir
+    experiment_dir = '/work/3dgs-drive/Pointnet_Pointnet2_pytorch/log/sem_seg_agco_real/' + args.log_dir
+
+    # Ensure the experiment directory exists
+    os.makedirs(experiment_dir, exist_ok=True)
 
     '''LOG'''
     args = parse_args()
